@@ -1,0 +1,8 @@
+print("Enter your height in meters:\n")
+height = float(input())
+print("Enter your weight in kilograms:\n")
+weight = float(input())
+height_squared = pow(height,2)
+print("Calculating BMI...")
+bmi = int(weight/height_squared)
+print ("Your BMI is: " +str(bmi))
