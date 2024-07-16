@@ -22,10 +22,7 @@ while len(guessed_states) < 50:
                               prompt="What's the state name?", ).title()
 
     if answer == "Exit":
-        missing_states = []
-        for i in states:
-            if i not in guessed_states:
-                missing_states.append(i)
+        missing_states = [i for i in states if i not in guessed_states]
         df = pd.DataFrame(missing_states, columns=["Missing States"])
         df.to_csv('missing_states.csv', index=False)
         break
