@@ -6,7 +6,7 @@ from datetime import datetime
 MY_LAT = 26.1158
 MY_LONG = 91.7086
 USER = "bhargavdas15@gmail.com"
-PASSWORD = "omzunsiwvotiidqv "
+PASSWORD = "omzunsiwvotiidqv"
 
 
 #Your position is within +5 or -5 degrees of the ISS position.
