@@ -8,8 +8,8 @@ STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 STOCK_API_KEY = '7JS8GTEWPEHS7R13'
 NEWS_API_KEY = '8ebbd9261c3a402b9d1ed14b9fe3c225'
-TWILIO_SID = 'ACf2a37bc0095ff197a682326fae06b120'
-TWILIO_AUTH = '06bb7ef639e58fdf096ec3dab72be853'
+TWILIO_SID = ''
+TWILIO_AUTH = ''
 
 
 stock_parameters = {
