@@ -1,8 +1,9 @@
 import requests
+import os
 from datetime import datetime
 
-APP_ID = '1ac38c53'
-API_KEY = '4f813a37ab062145fff800691e8b00b9'
+APP_ID = os.environ.get("NLP_APP_ID")
+API_KEY = os.environ.get("NLP_API_KEY")
 NLP_ENDPOINT = 'https://trackapi.nutritionix.com/v2/natural/exercise'
 SHEETLY_ENDPOINT = 'https://api.sheety.co/03e2cfdf998037f5e602b6006eadb329/workoutTracking/workouts'
 GENDER = 'Male'
@@ -32,15 +33,12 @@ exercise = data['exercises'][0]['name']
 duration = data['exercises'][0]['duration_min']
 calories = data['exercises'][0]['nf_calories']
 
-# print(exercise)
-# print(duration)
-# print(calories)
 
 today_date = datetime.now().strftime("%d/%m/%Y")
 time = datetime.now().strftime("%X")
 
 sheet_header = {
-    "Authorization": 'Basic Ymhhcmdhdl9kYXM5ODpiblZzYkRwdWRXeHM='
+    "Authorization": os.environ.get('SHEETLY_AUTHORIZATION')
 }
 sheet_inputs = {
     "workout": {
