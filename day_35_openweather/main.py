@@ -1,13 +1,14 @@
 import requests
+import os
 from twilio.rest import Client
-account_sid = 'ACf2a37bc0095ff197a682326fae06b1205'
-auth_token = '06bb7ef639e58fdf096ec3dab72be8535'
-API_KEY = 'e93697bbbdb2e1e6c9336fb7f76faaf26'
+account_sid = os.environ.get("ACCOUNT_SID")
+auth_token = os.environ.get("AUTH_TOKEN")
+API_KEY = os.environ.get("WEATHER_API")
 URL = 'https://api.openweathermap.org/data/2.5/forecast'
 parameters = {
     'lat': 26.140289,
     'lon': 91.791862,
-    'appid': 'e93697bbbdb2e1e6c9336fb7f76faaf26',
+    'appid': API_KEY,
     'units': 'metric',
     'cnt': 4,
 
@@ -25,9 +26,9 @@ for hour_data in data['list']:
 if will_rain:
     client = Client(account_sid, auth_token)
     message = client.messages.create(
-        from_='whatsapp:+[twilio number]',
+        from_='whatsapp:[TWILIO_NUMBER]',
         body='আজি বৰষুণ দিবলৈ গৈ আছে। ছাতিটো ল’বলৈ নাপাহৰিব। ☂️',
-        to='whatsapp:+[registered_number]'
+        to='whatsapp:[YOUR_REG_NUMBER]'
     )
     print(message.status)
 
